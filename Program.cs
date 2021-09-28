@@ -31,15 +31,14 @@ namespace collections
 
             Dictionary<string, string> newDict = new Dictionary<string, string>();
 
-            newDict.Add(nameArray[0], iceCream[rand.Next(0,4)]);
-            // newDict.Add(nameArray[1], iceCream[rand.Next(0,4)]);
-            // newDict.Add(nameArray[2], iceCream[rand.Next(0,4)]);
-            // newDict.Add(nameArray[3], iceCream[rand.Next(0,4)]);
-            foreach (KeyValuePair<string,string> name in newDict)
+            foreach (var name in nameArray)
             {
-                Console.WriteLine(name.key + name.value);
+                newDict.Add(name, iceCream[rand.Next(iceCream.Count)]);
             }
-
+            foreach(KeyValuePair<string, string> name in newDict)
+            {
+                Console.WriteLine(name.Key + " " + name.Value);
+            }
             Console.WriteLine("Hello World!");
         }
     }
